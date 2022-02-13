@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- TOP -->
+			<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
+			
+			<section>
+				<div id="h3"><h3>체형관리 수정</h3></div>
+				<div id="BMid">
+					<form method="post" action="<c:url value='/bodyManage/updatebodyManage'/>">
+						<table class="BMclass">
+							<tr><td>체형관리번호</td><td><input type="text" name="bodyNo" value="${bodyManage.bodyNo}" readonly></td></tr>
+							<tr><td>키</td><td><input type="text" name="height" value="${bodyManage.height}"></td></tr>
+							<tr><td>몸무게</td><td> <input type="text" name="weight" value="${bodyManage.weight}"></td></tr>
+							<tr><td>BMI</td><td><input type="text" name="bmi" value="${bodyManage.bmi}"></td></tr>
+							<tr><td>기록날짜</td> <td><input type="text" name="bodyRecordDate" value="${bodyManage.bodyRecordDate}"></td></tr>
+							<tr><td>가족 번호</td> <td><input type="text" name="famNo" value="${bodyManage.famNo}"></td></tr>
+							<tr><td colspan="2"><input type="submit" value="수정">&nbsp;&nbsp;&nbsp;<input type="reset" value="취소"></td></tr>
+						</table>
+					</form>
+				</div>
+			</section>
+			
+			<!-- bottom -->
+			<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
+</body>
+</html>
