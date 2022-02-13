@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="black" onclick="
+    if(document.querySelector('body').dataset.mode === 'day'){
+        document.querySelector('body').style.backgroundColor = 'black';
+        document.querySelector('body').style.color='white';
+        document.querySelector('body').dataset.mode = 'night';
+        this.value = 'day';
+    }else {
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+        document.querySelector('body').dataset.mode = 'day' ;
+        this.value = 'night';
+    }
+        ">
+</body>
+</html>
