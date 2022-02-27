@@ -1,0 +1,167 @@
+# CSS
+
+## 선택자
+
+- CSS3에서 특정 HTML 태그를 선택할 때는 선택자를 사용
+
+  ```css
+  h1(선택자){color(스타일 속성):red;(스타일 값)}
+  이와 같이 css 블록을 입력해 작성한 코드를 스타일시트라고 함
+  ```
+
+### 선택자의 종류
+
+- 전체 선택자 = *
+- 태그 선택자 = 태그= (h1
+- 아이디 선택자 = #아이디 = #id
+- 클래스 선택자 = .클래스 = .header
+- 후손 선택자 = 선택자 선택자 = header h1
+- 자손 선택자 = 선택자 > 선택자 = header > h1
+
+### 기본 선택자 (전체, 태그, 아이디, 클래스)
+
+- 공간 분할 태그에 아이디 선택자를 사용해 id 속성을 적용하고 레이아웃을 구성
+- 클래스 선택자는 특정한 클래스가 있는 태그를 선택할 때 사용 (웹 페이지 개발 시 가장 많이 사용)
+
+### 속성 선택자
+
+- 특정 속성 값이 있는 태그를 선택할 때
+
+- 선택자[속성]
+
+- 선택자[속성 = 값]
+
+  ```css
+  input[type="text"]{background: red;}
+  ```
+
+### 후손 선택자와 자손 선택자
+
+- div = 부모
+- h1, h2, ul = 자손
+- 자손안에 li = 후손
+
+#### 후손 선택자
+
+- 선택자A 선택자B = 선택자A의 후손인 선택자B 선택
+
+  ```css
+  #header h1, #header h2{color: red;}
+  header의 후손인 h1, h2태그를 선택하고 싶다면 이렇게 구성
+  ```
+
+#### 자손 선택자
+
+- 선택자A > 선택자B = 선택자A의 자손인 선택자B 선택
+
+  ```css
+  #header > h1 {color: red;}
+  ```
+
+- 테이블에서 선택자에게 색상을 적용하려면
+
+  ```css
+  table > tbody > tr > th를 입력해야 함!
+  ```
+
+### 반응, 상태, 구조 선택자
+
+#### 반응 선택자
+
+- :active = 사용자가 마우스로 클릭한 태그 선택
+- :hover = 사용자가 마우스 커서를 올린 태그 선택
+
+#### 상태 선택자
+
+- :checked = 체크 상태의 input 태그 선택
+- :focus = 포커스를 맞춘 input 태그 선택
+- :enabled = 사용 가능한 input 태그 선택
+- :disabled = 사용 불가능한 input 태그 선택
+
+#### 구조 선택자
+
+- :first-child = 형제 관계에서 첫 번째로 등장하는 태그 선택
+- :last-child = 형제 관계에서 마지막으로 등장하는 태그 선택
+- :nth-child(수열)  = 형제 관계에서 앞에서 수열 번째로 등장하는 태그 선택
+- :nth-last-child(수열) = 형제 관계에서 뒤에서 수여 ㄹ번째로 등장하는 태그 선택
+
+### CSS3 단위
+
+- % = 백분율
+- em = 배수
+- px = 픽셀
+
+#### URL 단위
+
+- 현재 폴더의 Desert.jpg
+  - background-image: url('Desert.jpg');
+- Other 폴더의 Desert.jpg
+  - background-image: url('Other/Desert.jpg');
+- 루트 폴더의 Desert.jpg
+  - background-image: url('/Desert.jpg');
+
+## CSS3 속성
+
+### 박스 속성
+
+- margin = 테두리와 다른 태그 사이의 테두리 바깥쪽 여백
+- border = 테두리
+- padding = 테두리와 글자 사이의 테두리 안쪽 여백 (배경색은 padding 영역까지만 적용)
+- width = 글자를 감싸는 영역의 가로 크기
+- height = 글자를 감싸는 영역의 세로 크기
+- 둥근 테두리 만들 때 = border-radius 사용! (항상 테두리는 시계 방향)
+
+### 가시 속성
+
+- none = 화면에 보이지 않음
+- block = 블록 박스 형식
+- inline = 인라인 박스 형식
+- inline-block = 블록과 인라인의 중간 형태로 지정
+- display : inline은 왼쪽 오른쪽만 적용
+- display : inline-block은 상하좌우로 적용
+
+### 배경 속성
+
+- background-image = 배경 이미지 삽입
+- background-size = 배경 이미지 크기 지정
+- background-repeat = 배경 이미지 반복 형태 지정
+  - no-repeat는 반복 없이 배경 이미지 적용
+- background-attachment = 배경 이미지 부착 형태 지정
+- background-position = 배경 이미지 위치 지정
+- background = 한 번에 모든 배경 속성 입력
+
+### 글자 속성
+
+- font-size = 크기 단위
+- font-family = 글꼴 입력
+
+- Serif 글꼴 = 모서리가 뾰족한 글자
+- Sans-serif = 모서리가 네모진 글자
+- text-align = 글자 정렬 지정
+  - 주의 사항! span태그는 인라인 형태여서 너비가 없어서 속성 적용 불가!
+- line-height = 글자를 수직 중앙 정렬
+  - block 속성은 스타일 속성이 없어서 불가! -> 그래서 height로 조절 (박스 높이가 같게 해서!)
+- text-decoration: none; = a태그 밑줄 제거
+
+### 위치 속성
+
+- position = 요소의 위치 지정 형식을 설정할 때 사용
+  - absolute = 절대 위치 좌표 설정
+  - fixed = 화면을 기준으로 절대 위치 좌표 설정
+  - relative = 초기 위치에서 상하좌우로 위치 이동
+  - static = 위쪽에서 아래쪽으로 순서대로 배치
+  - z-index = 도형의 앞, 뒤 순서 바꿀 때
+- overflow
+  - hidden = 부모 영역을 벗어난 부분을 잘라 모두 감춤
+  - scroll = 스크롤 생성, 부모 영역을 벗어나는 부분 스크롤로 확인 가능
+
+### 유동 속성
+
+- left = 태그의 왼쪽에 붙임
+- right = 태그의 오른쪽에 붙임
+- float: left; = 이미지와 글이 어우러진 형태로 출력..! 
+
+### 그림자와 그레이디언트 속성
+
+- text-shadow = 글자에 그림자를 부여
+- box-shadow = 박스에 그림자를 부여 
